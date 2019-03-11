@@ -21,7 +21,7 @@ internalField   uniform (0 0 0);
 
 boundaryField
 {
-    inandouthalf11
+    upstreamInlet
     {
         type            groovyBC;
         refValue        uniform ( 0 0 0);
@@ -33,33 +33,20 @@ boundaryField
         fractionExpression "1";
         evaluateDuringConstruction 1;
     }
-    inandouthalf12
+    downstreamOutlet
     {
-        type            directionMixed;
+        type            zeroGradient;
+        /*type            directionMixed;
         refValue uniform (0 0 0);
         refGradient uniform (0 0 0);
-        valueFraction uniform (0 0 0 1 0 1);
+        valueFraction uniform (0 0 0 1 0 1);*/
     }
-    inandouthalf21
-    {
-        type            fixedValue;
-        value           uniform (0 0 0);
-    }
-    inandouthalf22
-    {
-      type            fixedValue;
-      value           uniform (0 0 0);
-    }
+
     top
     {
         type            zeroGradient;
     }
     walls
-    {
-        type            fixedValue;
-        value           uniform (0 0 0);
-    }
-    frontAndBackPlanes
     {
         type            fixedValue;
         value           uniform (0 0 0);

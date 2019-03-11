@@ -21,47 +21,28 @@ internalField   uniform 0;
 
 boundaryField
 {
-    inandouthalf11
+    upstreamInlet
     {
         type            zeroGradient;
     }
-    inandouthalf12
+    downstreamOutlet
     {
+       //type zeroGradient;
        type            fixedValue;
        value           uniform  0;
     }
-    inandouthalf21
-    {
-        type            zeroGradient;
-    }
-    inandouthalf22
-    {
-	type 		zeroGradient;
-//       type            groovyBC;
-//       value           uniform  0;
-//       valueExpression "1e3*9.81*(0.15-pos().y)";
-    }
+
+
     top
     {
 	type		zeroGradient;
-//	type		fixedValue;
-//	value		uniform 0;
-//        type            symmetryPlane;
-//        type            groovyBC;
-//        value           uniform  0;
-//        valueExpression "9.0774*(1.1-pos().x)";
     }
+
     walls
     {
-        //type            fixedFluxPressure;
-        //gradient           $internalField;    
-        //value           uniform 2262.02;
     	type            zeroGradient;
     }
-    frontAndBackPlanes
-    {
-        type            zeroGradient;
-    }
+
 }
 
 

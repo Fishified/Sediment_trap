@@ -21,29 +21,19 @@ internalField   uniform 0;
 
 boundaryField
 {
-    inandouthalf11
+    upstreamInlet
     {
         type            calculated;
         value           uniform 0;
     }
-    inandouthalf12
+    downstreamOutlet
     {
         type            calculated;
         value           uniform 0;
     }
-    inandouthalf21
-    {
-        type            calculated;
-        value           uniform 0;
-    }
-    inandouthalf22
-    {
-        type            calculated;
-        value           uniform 0;
-    }
+
     top
     {
-//        type            symmetryPlane;
         type            calculated;
         value           uniform 0;
     }
@@ -51,13 +41,8 @@ boundaryField
     {
         type            calculated;
         value           uniform 0; 
-       //type            zeroGradient;
     }
-    frontAndBackPlanes
-    {
-        type            calculated;
-        value           uniform 0; 
-    }
+ 
 }
 
 

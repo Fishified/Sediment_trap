@@ -7,7 +7,7 @@ blockMesh
 cp -r 0_org 0
 
 # Initialize the alpha field
-funkySetFields -time 0
+#funkySetFields -time 0
 
 # Write the mesh in folder 0/
 postProcess -func writeCellCentres -time 0

@@ -21,10 +21,8 @@ internalField   uniform 0;
 
 boundaryField
 {
-    inandouthalf11
+    upstreamInlet
     {
-//         type            fixedValue;
-//         value           uniform 1e-6;
          type            groovyBC;
          refValue        uniform 0;
          refGradient     uniform 0;
@@ -45,33 +43,20 @@ boundaryField
  }
  );
     }
-    inandouthalf12
+    downstreamOutlet
     {
        type            zeroGradient;
     }
-    inandouthalf21
-    {
-	type		zeroGradient;
-    }
-    inandouthalf22
-    {
-	type		zeroGradient;
-    }
+ 
     top
     {
-//        type            fixedValue;
-//	value 		uniform 0.;
-//        type            symmetryPlane;
         type            zeroGradient;
     }
     walls
     {
         type            zeroGradient;
     }
-    frontAndBackPlanes
-    {
-        type            zeroGradient;
-    }
+
 }
 
 

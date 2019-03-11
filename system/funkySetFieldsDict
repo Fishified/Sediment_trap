@@ -75,7 +75,7 @@ expressions
 	keepPatches 1;
         }
 
-       alpha
+        alpha
         {
         field alpha_a; //field to initialise
         fields

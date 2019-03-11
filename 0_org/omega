@@ -21,25 +21,17 @@ internalField   uniform 300e0;
 
 boundaryField
 {
-    inandouthalf11
+    upstreamInlet
     {
         type            zeroGradient;
     }
-    inandouthalf12
+    downstreamOutlet
     {
         type            zeroGradient;
     }
-    inandouthalf21
-    {
-       type             zeroGradient;
-    }
-    inandouthalf22
-    {
-        type            zeroGradient;
-    }
+
     top
     {
-//        type            symmetryPlane;
         type            zeroGradient;
     }
     walls
@@ -47,11 +39,7 @@ boundaryField
         type            fixedValue;
         value           uniform 100;
     }
-    frontAndBackPlanes
-    {
-         type            fixedValue;
-        value           uniform 100;
-    }
+
 }
 
 

@@ -58,24 +58,24 @@ edges
 
 boundary         
 (
-    inandouthalf21 
+    /*upstreamWall 
     {
      type   wall;
      faces 
 	    ((0 7 18 11));
-    }
+    }*/
 
-    inandouthalf12
+    downstreamOutlet
     {
      type   patch;
      faces  (
-             (3 14 15 4)
-             (4 15 16 5)
-             (5 16 21 10)
+             
+             (4 15 16 5) //above zero
+             (5 16 21 10)//above zero 
              );
     }
 
-    inandouthalf11
+    upstreamInlet
     {
      type patch;
      faces ((7 8 19 18));
@@ -122,6 +122,10 @@ boundary
 
            //drop wall
            (2 1 12 13)
+
+           //downstream wall of trap
+           (3 14 15 4) //below zero
+            (0 7 18 11)
 
            );
 
