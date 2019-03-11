@@ -75,6 +75,14 @@ expressions
 	keepPatches 1;
         }
 
+    /*alpha
+	{
+	 field alpha_a; //field to initialise
+	 expression "0.611392"; 
+	 condition  "(pos().z<0) && (pos().x<=0.2)"; 
+         keepPatches 1; //keep the boundary conditions that were set before
+	}*/
+
         alpha
         {
         field alpha_a; //field to initialise
@@ -90,6 +98,7 @@ expressions
         }
         );
         expression "inletprofilealpha(pos().z)";
+        condition  "(pos().z<0) && (pos().x<=0.2) ";
         keepPatches 1;
         }
 
