@@ -21,7 +21,15 @@ internalField   uniform (0 0 0);
 
 boundaryField
 {
+    
     upstreamInlet
+    {
+        type            timeVaryingMappedFixedValue;
+        offset          (0 0 0);
+        setAverage      off;
+    }
+    
+    /*upstreamInlet
     {
         type            groovyBC;
         refValue        uniform ( 0 0 0);
@@ -32,7 +40,7 @@ boundaryField
         gradientExpression "vector(0,0,0)";
         fractionExpression "1";
         evaluateDuringConstruction 1;
-    }
+    }*/
     downstreamOutlet
     {
         type            zeroGradient;//directionMixed;

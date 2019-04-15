@@ -108,7 +108,7 @@ boundary
 
     top
     { 
-     type symmetryPlane;
+     type patch;
         faces (
             (8 9 20 19)
             (9 10 21 20)

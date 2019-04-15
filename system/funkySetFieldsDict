@@ -17,7 +17,7 @@ FoamFile
 
 expressions
  (
-	sedimentvelocity
+	/*sedimentvelocity
 	{
 	field Ua; //field to initialise
 	fields
@@ -73,7 +73,7 @@ expressions
         value uniform (1 0 0);
 	expression "vector(inletprofilefvel(pos().z)*1.3360,0,inletprofilefvelv(pos().z))";
 	keepPatches 1;
-        }
+        }*/
 
     /*alpha
 	{
