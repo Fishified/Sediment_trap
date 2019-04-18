@@ -53,6 +53,38 @@ maxAlphaCo      0.8;
 
 maxDeltaT       0.5;
 
+functions
+{
+
+        sed_vol_integrate_trap
+        {
+        type volFieldValue;
+        libs ("libfieldFunctionObjects.so");
+        log true;
+        writeControl writeTime;
+        writeFields true;
+        regionType cellZone;
+        name trap;
+        operation volIntegrate;
+        fields (alpha_a);
+        }
+
+        sed_vol_integrate_platform
+        {
+        type volFieldValue;
+        libs ("libfieldFunctionObjects.so");
+        log true;
+        writeControl writeTime;
+        writeFields true;
+        regionType cellZone;
+        name plateau;
+        operation volIntegrate;
+        fields (alpha_a);
+        }
+
+}
+
+
 libs (
 "libgroovyBC.so"
 "libgroovyStandardBCs.so"
