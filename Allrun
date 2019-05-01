@@ -4,11 +4,13 @@
 blockMesh
 
 # create the intial time folder
+rm -r 0
+foamListTimes -rm
 cp -r 0_org 0
-
-#setFields
+rm -r pro*
+setFields
 # Initialize the alpha field
-funkySetFields -time 0
+#funkySetFields -time 0
 
 
 # Write the mesh in folder 0/

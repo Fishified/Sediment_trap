@@ -15,9 +15,9 @@ FoamFile
 }
 // * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
 
-kineticTheory   off;
+kineticTheory   on;
 
-equilibrium     off;
+equilibrium     on;
 
 e               e [ 0 0 0 0 0 0 0 ] 0.8;
 

@@ -29,7 +29,7 @@ deltaT          2e-4;
 
 writeControl    adjustableRunTime;
 
-writeInterval   0.2;
+writeInterval   0.02;
 
 purgeWrite      0;
 
@@ -56,7 +56,7 @@ maxDeltaT       0.5;
 functions
 {
 
-        sed_vol_integrate_trap
+        /*sed_vol_integrate_trap
         {
         type volFieldValue;
         libs ("libfieldFunctionObjects.so");
@@ -80,7 +80,7 @@ functions
         name plateau;
         operation volIntegrate;
         fields (alpha_a);
-        }
+        }*/
 
 }
 

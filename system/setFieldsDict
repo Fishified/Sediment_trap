@@ -24,10 +24,11 @@ regions
 (
     boxToCell
     {
-        box (0 -0.15 -0.02) (0.3 0.150 0);
+        box (0 -0.15 -0.025) (0.3 0.150 0);
         fieldValues
         (
-            volScalarFieldValue alpha_a 1
+            volScalarFieldValue alpha_a 0.58
+            //volVectorFieldValue Ua uniform (0.3 0 0)
         );
     }
 );

@@ -75,11 +75,11 @@ vertices
 
 blocks          
 (
-    hex (0 1 12 11 7  6 17 18) (60 30  5)   simpleGrading (1 1 1)   //block 0 - block containing sediment bed
-    hex (7 6 17 18 8  9 20 19) (60 30 20)   simpleGrading (1 1 1)   //block 1 - block above sediment bed 
-    hex (6 5 16 17 9 10 21 20) (50 30 20)   simpleGrading (1 1 1)   //block 2 - block top right (see profile)
-    hex (1 4 15 12 6  5 16 17) (50 30  5)   simpleGrading (1 1 1)   //block 3 - block adjacent to sediment bed
-    hex (2 3 14 13 1  4 15 12) (50 30 10)   simpleGrading (1 1 1)   //block 4 - block for sediment trap
+    hex (0 1 12 11 7  6 17 18) (60 60  5)   simpleGrading (1 1 1)   //block 0 - block containing sediment bed
+    hex (7 6 17 18 8  9 20 19) (60 60 40)   simpleGrading (1 1 1)   //block 1 - block above sediment bed 
+    hex (6 5 16 17 9 10 21 20) (50 60 40)   simpleGrading (1 1 1)   //block 2 - block top right (see profile)
+    hex (1 4 15 12 6  5 16 17) (50 60  5)   simpleGrading (1 1 1)   //block 3 - block adjacent to sediment bed
+    hex (2 3 14 13 1  4 15 12) (50 60 10)   simpleGrading (1 1 1)   //block 4 - block for sediment trap
 );
 
 edges           

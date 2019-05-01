@@ -23,26 +23,10 @@ boundaryField
 {
     upstreamInlet
     {
-         type            groovyBC;
-         refValue        uniform 0;
-         refGradient     uniform 0;
-         valueFraction   uniform 1;
-         value           uniform 0;
-         valueExpression "inletprofilealpha(pos().z)/100.";
-         gradientExpression "0";
-         fractionExpression "1";
-         evaluateDuringConstruction 1;
-         variables       "";
-         timelines       (
- );
-         lookuptables    (
- {
-         name            inletprofilealpha;
-         file            "$FOAM_CASE/1d_profil/alpha.xy";
-         outOfBounds     clamp;
- }
- );
+        type            fixedValue;
+        value           uniform 0;
     }
+
     downstreamOutlet
     {
        type            zeroGradient;
