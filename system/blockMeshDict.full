@@ -1,0 +1,158 @@
+/*--------------------------------*- C++ -*----------------------------------*\
+| =========                 |                                                 |
+| \\      /  F ield         | OpenFOAM: The Open Source CFD Toolbox           |
+|  \\    /   O peration     | Version:  1.7.1                                 |
+|   \\  /    A nd           | Web:      www.OpenFOAM.com                      |
+|    \\/     M anipulation  |                                                 |
+\*---------------------------------------------------------------------------*/
+FoamFile
+{
+    version     2.0;
+    format      ascii;
+    class       dictionary;
+    object      blockMeshDict;
+}
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
+
+convertToMeters 1;
+
+/*
+The mesh consists of 22 vertices (starting with index 0):
+
+                                                     block layout
+                                        ____________________________________
+           8 ___________ 19            |                   |                |
+            |\          |\             |         1         |        2       |
+            | \         | \            |___________________|________________|
+            |  \        |  \           |_________0_________|________3_______| 
+            |   \       |   \                              |                |
+            |7   \      | 18 \                             |________4_______|
+           0|_____\9____| 11  \ 20                                
+             \     |\    \     \
+              \    | \    \     \
+               \   |  \    \     \
+                \  |   \    \     \
+                 \ |6   \10__\_____\ 21
+                1 \|____|_____\ 17  |
+                   |    |      |12  |
+                 2 |____|______|13  | 
+                   \    |       \   |
+                    \   | 5      \  |16
+                     \  | 4       \ |15
+                      \ |          \|
+                     3 \|___________|14
+
+The vertices are used to define 5 mesh blocks
+*/                  
+
+vertices 
+
+(
+    (0.0   -0.075  -0.025)   //0
+    (0.3   -0.075  -0.025)   //1
+    (0.3   -0.075  -0.075)   //2
+    (0.55  -0.075  -0.075)   //3 
+    (0.55  -0.075  -0.025)   //4
+    (0.55  -0.075   0)       //5
+    (0.3   -0.075   0)       //6
+    (0.0   -0.075   0)       //7
+    (0.0   -0.075   0.10)    //8
+    (0.3   -0.075   0.10)    //9
+    (0.55  -0.075   0.10)    //10
+
+    (0.0   0.075  -0.025)    //11
+    (0.3   0.075  -0.025)    //12
+    (0.3   0.075  -0.075)    //13
+    (0.55  0.075  -0.075)    //14 
+    (0.55  0.075  -0.025)    //15
+    (0.55  0.075   0)        //16
+    (0.3   0.075   0)        //17
+    (0.0   0.075   0)        //18
+    (0.0   0.075   0.10)     //19
+    (0.3   0.075   0.10)     //20
+    (0.55  0.075   0.10)     //21
+);
+
+blocks          
+(
+    hex (0 1 12 11 7  6 17 18) (60 60  5)   simpleGrading (1 1 1)   //block 0 - block containing sediment bed
+    hex (7 6 17 18 8  9 20 19) (60 60 40)   simpleGrading (1 1 1)   //block 1 - block above sediment bed 
+    hex (6 5 16 17 9 10 21 20) (50 60 40)   simpleGrading (1 1 1)   //block 2 - block top right (see profile)
+    hex (1 4 15 12 6  5 16 17) (50 60  5)   simpleGrading (1 1 1)   //block 3 - block adjacent to sediment bed
+    hex (2 3 14 13 1  4 15 12) (50 60 10)   simpleGrading (1 1 1)   //block 4 - block for sediment trap
+);
+
+edges           
+(
+);
+
+boundary         
+(
+
+    downstreamOutlet
+    {
+     type   patch;
+     faces  (
+             
+             (4 15 16 5) 
+             (5 16 21 10) 
+             );
+    }
+
+    upstreamInlet
+    {
+     type patch;
+     faces ((7 8 19 18));
+
+    }
+
+    top
+    { 
+     type patch;
+        faces (
+            (8 9 20 19)
+            (9 10 21 20)
+        );
+
+    }
+
+    walls 
+    {
+     type wall;
+     faces (
+           //floor
+           (0 11 12 1)
+           (2 13 14 3)
+
+           //near wall
+           (0 1 6 7)
+           (7 6 9 8)
+           (2 3 4 1)
+           (1 4 5 6)
+           (6 5 10 9)           
+
+           //far wall
+           (11 18 17 12)
+           (18 19 20 17)
+           (13 12 15 14)
+           (12 17 16 15)
+           (17 20 21 16)
+
+           //trap wall
+           (2 1 12 13)
+
+           //downstream wall of trap below zero
+           (3 14 15 4) 
+
+           //downstream wall of sediment platform
+           (0 7 18 11)
+
+           );
+    }
+);
+
+mergePatchPairs
+(
+);
+
+// ************************************************************************* //
