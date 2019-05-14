@@ -28,30 +28,20 @@ boundaryField
         setAverage      off;
     }
 
-    /*upstreamInlet
+    plane
     {
-        type            groovyBC;
-        refValue        uniform ( 0 0 0);
-        refGradient     uniform (0 0 0);
-        valueFraction   uniform 1;
-        value           uniform (0 0 0);
-        valueExpression "(0.02/0.41)*log(30.0*mag(pos().z)/(2.5*0.00025))*vector(1,0,0)";
-        gradientExpression "vector(0,0,0)";
-        fractionExpression "1";
-        evaluateDuringConstruction 1;
-    }*/
+	type		symmetryPlane;
+    }
+
     downstreamOutlet
     {
         type            zeroGradient;
-        /*type            directionMixed;
-        refValue uniform (0 0 0);
-        refGradient uniform (0 0 0);
-        valueFraction uniform (0 0 0 1 0 1);*/
     }
 
     top
     {
-        type            zeroGradient;
+        type            fixedValue;
+        value           uniform (0 0 0);
     }
     walls
     {

@@ -22,7 +22,7 @@ defaultFieldValues
 
 regions
 (
-    boxToCell
+    /*boxToCell
     {
         box (0 -0.15 -0.025) (0.3 0.150 0);
         fieldValues
@@ -30,7 +30,7 @@ regions
             volScalarFieldValue alpha_a 0.58
             //volVectorFieldValue Ua uniform (0.3 0 0)
         );
-    }
+    }*/
 );
 
 

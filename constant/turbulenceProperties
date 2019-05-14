@@ -20,8 +20,8 @@ simulationType RAS;
 RAS{
 RASModel twophasekEpsilon;
 
-printCoeffs     off;
-turbulence      off;
+printCoeffs     on;
+turbulence      on;
 popeCorrection  off;
 }
 

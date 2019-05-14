@@ -37,6 +37,12 @@ boundaryField
         type            calculated;
         value           uniform 0;
     }
+
+    plane
+    {
+	type		symmetryPlane;
+    }
+
     walls
     {
         type            calculated;

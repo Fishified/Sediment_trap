@@ -53,7 +53,6 @@ boundary
         faces
         (
          (2 3 7 6) 
-         (1 2 6 5) 
         );
     }
     walls
@@ -61,6 +60,7 @@ boundary
         type wall;
         faces
         (
+         (1 2 6 5) 
          (2 10 11 3) 
          (1 9 10 2) 
          (10 18 19 11) 

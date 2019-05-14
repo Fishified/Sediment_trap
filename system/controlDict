@@ -23,13 +23,13 @@ startTime       0;
 
 stopAt          endTime;
 
-endTime         60;
+endTime         10;
 
 deltaT          2e-4;
 
 writeControl    adjustableRunTime;
 
-writeInterval   0.02;
+writeInterval   0.2;
 
 purgeWrite      0;
 
@@ -84,10 +84,5 @@ functions
 
 }
 
-
-libs (
-"libgroovyBC.so"
-"libgroovyStandardBCs.so"
-     );
 
 // ************************************************************************* //

@@ -27,11 +27,19 @@ boundaryField
     }
     downstreamOutlet
     {
-       //type zeroGradient;
        type            fixedValue;
        value           uniform  0;
     }
 
+    plane
+    {
+	type		symmetryPlane;
+    }
+
+    plane
+    {
+	type		symmetryPlane;
+    }
 
     top
     {

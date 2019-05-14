@@ -33,6 +33,11 @@ boundaryField
 	value		uniform 1.e-12;
     }
 
+    plane
+    {
+	type		symmetryPlane;
+    }
+
     top
     {
         type            zeroGradient;

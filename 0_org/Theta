@@ -30,7 +30,12 @@ boundaryField
     {
         type            zeroGradient;
     }
- 
+
+    plane
+    {
+	type		symmetryPlane;
+    }
+
     top
     {
         type            zeroGradient;
