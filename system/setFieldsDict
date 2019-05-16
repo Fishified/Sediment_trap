@@ -18,19 +18,22 @@ FoamFile
 defaultFieldValues
 (
     volScalarFieldValue alpha_a 0
+
 );
 
 regions
 (
-    /*boxToCell
+    zoneToCell
     {
-        box (0 -0.15 -0.025) (0.3 0.150 0);
+        name "sedimentZone";
         fieldValues
         (
             volScalarFieldValue alpha_a 0.58
-            //volVectorFieldValue Ua uniform (0.3 0 0)
+			volVectorFieldValue Ua (0 0 0)
+			volVectorFieldValue Ub (0 0 0)
         );
-    }*/
+    }
+	
 );
 
 

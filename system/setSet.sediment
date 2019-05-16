@@ -1,0 +1,5 @@
+pointSet tempSet new surfaceToPoint "./constant/triSurface/initial_sed_bed.stl" 0.001 true false
+cellSet sedimentSet new pointToCell tempSet any
+
+pointSet tempSet remove
+cellZoneSet sedimentZone new setToCellZone sedimentSet
