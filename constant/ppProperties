@@ -18,7 +18,7 @@ FoamFile
 // parameters for pff
 
 //alphaMax         alphaMax         [ 0 0 0 0 0 0 0 ] 0.635;
-alphaMax        0.635;
+alphaMax        0.65;
 
 alphaMinFriction alphaMinFriction [ 0 0 0 0 0 0 0 ] 0.57;
 

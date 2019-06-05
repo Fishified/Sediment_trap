@@ -17,7 +17,7 @@ FoamFile
 
 
 // * * * * * * * * definition of turbulence coefficient and others * * * * * * * * * //
-SUS             SUS [ 0 0 0 0 0 0 0 ] 1;  //set to 1 to include turbulent suspension term, else set to 0
+SUS             SUS [ 0 0 0 0 0 0 0 ] 1;    //set to 1 to include turbulent suspension term, else set to 0
 C3om           C3ep [ 0 0 0 0 0 0 0 ] 0.35; //set the coefficient of C3 in epsilon equation */
 C4om           C4ep [ 0 0 0 0 0 0 0 ] 1;
 C3ep           C3ep [ 0 0 0 0 0 0 0 ] 1.2; //set the coefficient of C3 in epsilon equation */
