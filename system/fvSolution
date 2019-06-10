@@ -75,14 +75,14 @@ solvers
     {
         solver          PBiCG;
         preconditioner  DILU;
-        tolerance       1e-15;
+        tolerance       1e-6;
         relTol          0;
     }
     alpha_aFinal
     {
         solver          PBiCG;
         preconditioner  DILU;
-        tolerance       1e-15;
+        tolerance       1e-6;
         relTol          0;
     }
     Theta
@@ -96,7 +96,7 @@ solvers
     {
         solver          PBiCG;
         preconditioner  DILU;
-        tolerance       1e-10;
+        tolerance       1e-6;
         relTol          0;
     }
 }

@@ -25,11 +25,11 @@ stopAt          endTime;
 
 endTime         10;
 
-deltaT          2e-4;
+deltaT          5e-5;
 
 writeControl    adjustableRunTime;
 
-writeInterval   0.2;
+writeInterval   0.0001;
 
 purgeWrite      0;
 
@@ -56,31 +56,128 @@ maxDeltaT       0.5;
 functions
 {
 
-        /*sed_vol_integrate_trap
+    #includeFunc  surfaces
+    #includeFunc  flowRatePatch
+
+
+    sedBedElevation
+    {
+        type            surfaces;
+
+        functionObjectLibs
+        (
+            "libsampling.so"
+        );
+
+        outputControl   outputTime;
+        surfaceFormat  vtk;
+        interpolationScheme cellPoint;
+
+        fields
+        (
+            //alpha_a
+            Ua
+        );
+
+        surfaces
+        (
+            sixty_alpha_a
+            {
+                type        isoSurface;
+                isoField    alpha_a;
+                isoValue    0.6;
+                interpolate true;
+            }
+
+            sixty_one_alpha_a
+            {
+                type        isoSurface;
+                isoField    alpha_a;
+                isoValue    0.61;
+                interpolate true;
+            }
+
+            sixty_two_alpha_a
+            {
+                type        isoSurface;
+                isoField    alpha_a;
+                isoValue    0.62;
+                interpolate true; 
+            }
+
+            sixty_three_alpha_a
+            {
+                type        isoSurface;
+                isoField    alpha_a;
+                isoValue    0.63;
+                interpolate true;
+            }
+
+            sixty_four_alpha_a
+            {
+                type        isoSurface;
+                isoField    alpha_a;
+                isoValue    0.64;
+                interpolate true;
+            }
+        );
+    }
+
+        sedVolumeDomain
         {
         type volFieldValue;
         libs ("libfieldFunctionObjects.so");
         log true;
-        writeControl writeTime;
+        writeControl timeStep;
         writeFields true;
         regionType cellZone;
-        name trap;
+        name wholeDomain;
         operation volIntegrate;
         fields (alpha_a);
         }
 
-        sed_vol_integrate_platform
+        sedVolumeOnPlatform
         {
         type volFieldValue;
         libs ("libfieldFunctionObjects.so");
         log true;
-        writeControl writeTime;
+        writeControl timeStep;
         writeFields true;
         regionType cellZone;
-        name plateau;
+        name platFormSamplingVolume;
         operation volIntegrate;
         fields (alpha_a);
-        }*/
+        }
+
+        fluidVolumeOnPlatform
+        {
+
+        type volFieldValue;
+        libs ("libfieldFunctionObjects.so");
+        log true;
+        writeControl timeStep;
+        writeFields true;
+        regionType cellZone;
+        name platFormSamplingVolume;
+        operation volIntegrate;
+        fields (alpha_b);
+
+        }     
+
+        sedVolumeInTrap
+        {
+
+        type volFieldValue;
+        libs ("libfieldFunctionObjects.so");
+        log true;
+        writeControl timeStep;
+        writeFields true;
+        regionType cellZone;
+        name trapSamplingVolume;
+        operation volIntegrate;
+        fields (alpha_a);
+
+        }
 
 }
 
